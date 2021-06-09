@@ -16,7 +16,7 @@ var currentUVEl = document.getElementById("UV-index");
 var historyEl = document.getElementById("history");
 var fivedayEl = document.getElementById("fiveday-header");
 var todayweatherEl = document.getElementById("today-weather");
-let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
 // Use the API key here
 var APIKey = "4522a7b988b7fe26751a3d7a52f304ab";
@@ -39,7 +39,7 @@ function getWeather(cityName) {
     var year = currentDate.getFullYear();
     nameEl.innerHTML =
       response.data.name + " (" + month + "/" + day + "/" + year + ") ";
-    let weatherPic = response.data.weather[0].icon;
+    var weatherPic = response.data.weather[0].icon;
     currentPicEl.setAttribute(
       "src",
       "https://openweathermap.org/img/wn/" + weatherPic + "@2x.png"
@@ -53,9 +53,9 @@ function getWeather(cityName) {
       "Wind Speed: " + response.data.wind.speed + " MPH";
 
     // Get UV Index
-    let lat = response.data.coord.lat;
-    let lon = response.data.coord.lon;
-    let UVQueryURL =
+    var lat = response.data.coord.lat;
+    var lon = response.data.coord.lon;
+    var UVQueryURL =
       "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
       lat +
       "&lon=" +
@@ -63,7 +63,7 @@ function getWeather(cityName) {
       "&appid=" +
       APIKey;
     axios.get(UVQueryURL).then(function (response) {
-      let UVIndex = document.createElement("span");
+      var UVIndex = document.createElement("span");
 
       // When UV Index is good, shows green, when ok shows yellow, when bad shows red
       if (response.data[0].value < 4) {
@@ -80,8 +80,8 @@ function getWeather(cityName) {
     });
 
     // Get 5 day forecast for the chosen city
-    let cityID = response.data.id;
-    let forecastQueryURL =
+    var cityID = response.data.id;
+    var forecastQueryURL =
       "https://api.openweathermap.org/data/2.5/forecast?id=" +
       cityID +
       "&units=imperial" +
