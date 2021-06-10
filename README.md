@@ -3,6 +3,11 @@
 
 ##Technologies that were used:
 \*HTML
-**CSS \***Javascript
+\*\*CSS
+\*\*\*Javascript
+\*\*\*\*Bootstrap
+\*\*\*\*\*API
 
 ##Screenshot
+
+###Create by Carolina Reedy
