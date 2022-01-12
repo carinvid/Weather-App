@@ -19,7 +19,7 @@ var todayweatherEl = document.getElementById("today-weather");
 var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
 // Use the API key here
-var APIKey = "4522a7b988b7fe26751a3d7a52f304ab";
+var APIKey = "9825785b4d3a99c4ca3a75add2201774";
 
 function getWeather(cityName) {
   // Pull the current weather from OpenWeather API
